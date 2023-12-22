@@ -72,4 +72,38 @@
     
 **NoSQL Database and Relational Database does not replace each other for all tasks. Both do different tasks extremely well, and should be utilized for the use cases they fit best.**
 
+###Relational Data Models
+- The importance of Relational Database:
+    + Standardize of data model
+    + Flexibility in adding and altering tables
+    + Data Integrity
+    + SQL
+    + Simplicity
+    + Intuitive Organization
+
+- **OLAP vs OLTP**
+    + Online Analytical Processing (OLAP): Databases optimized for these workloads allow for complext analytical and ad hoc queries. These type of databases are optimized for reads.
+    + Online Transactional Processing (OLTP): Databases optimized for these workloads allow for les complex queries in large volumne. These types of queries for these databases are read, insert, update and delete.
  
+- **Normalization**
+    + The process of structuring a relational database in accordance with a series of normal forms in order to reduce data redundancy and increase data integrity.
+    + We dont want or need extra copies of our data, this is data redundancy. We want to be able to update data in on place and have that be the source of truth, that is data integrity.
+    + Objectives of Normal Form:
+        ++ To free the databse from unwanted insertions, updates and delete dependencies.
+        ++ To reduce the need for refactoring the database as new types of data are introduced
+        ++ To make the relational model more informative to users.
+        ++ To make the database neutral to the query statistics.
+    + The proces of normalization is a step by step process:
+        ++ First Normal Form (1NF): 
+            +++ Atomic values: each cell contains unique and single values
+            +++ Be able to add data without altering tables
+            +++ Seperate different relations into different tables
+            +++ Keep relationships between tables together with foreign keys
+        ++ Second Normal Form (2NF):
+            +++ Reach 1NF
+            +++ All columns in the table must rely on the Primary Key
+        ++ Third Normal Form (3NF):
+            +++ Reach 2NF
+            +++ No transitive dependencies
+
+    + Denormalization: Muse be done in ready heavy workloads to increase performance.
