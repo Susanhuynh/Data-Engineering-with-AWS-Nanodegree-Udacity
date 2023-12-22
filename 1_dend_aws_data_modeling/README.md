@@ -33,5 +33,6 @@
     + Need high availability: describe a database  where there is very little downtime of the system, it is always on and functioning.
     + Need horizontal scalability: add more machines or nodes to a system to increase performance and add space. 
 
-    ### What is PostgreSQL?
-    - It is RDBMS and uses SQL. 
+### What is PostgreSQL?
+- It is RDBMS and uses SQL. It provides various features that reliably store and scale complicated data workloads.
+- PostgresSQL SQL syntax is different than other relational database SQL syntax.
