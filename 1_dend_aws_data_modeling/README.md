@@ -36,3 +36,40 @@
 ### What is PostgreSQL?
 - It is RDBMS and uses SQL. It provides various features that reliably store and scale complicated data workloads.
 - PostgresSQL SQL syntax is different than other relational database SQL syntax.
+
+### What is NoSQL Database? 
+- NoSQL Database has a simpler design, simpler horizontal scaling, and finer control of availability. Data structures used are different than those in Relational Database are make some operations faster.
+
+- The basics of Apache Cassandra:
+    + Keyspace: Collection of tables
+    + Table: A group of partitions
+    + Rows: A single item
+    + Partition:
+        ++ A fundamental of access
+        ++ Collection of rows
+        ++ How data is distributed
+    + Primary Key: is made up of a partition key and clustering columns
+    + Columns: 
+        ++ Clustering and Data
+        ++ Labeled element
+
+- When to use a NoSQL Database:
+    + Large amounts of data
+    + Need horizotal scalability
+    + Need high throughput -- fast reads
+    + Need flexible schema
+    + Need high availability
+    + Need to be store different data type formats
+    + Users are distributed - low latency
+
+- When not to use NoSQL Database?
+    + Need ACID transactions
+    + Need ability to do JOINS
+    + Ability to do aggregations and analytics
+    + Have changing business requirements
+    + Queries are not available and need to have flexibility
+    + Have a small dataset
+    
+**NoSQL Database and Relational Database does not replace each other for all tasks. Both do different tasks extremely well, and should be utilized for the use cases they fit best.**
+
+ 
