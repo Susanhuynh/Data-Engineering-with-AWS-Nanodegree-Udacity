@@ -106,4 +106,9 @@
             + Reach 2NF
             + No transitive dependencies
 
-    + Denormalization: Muse be done in ready heavy workloads to increase performance.
+- **Denormalization**
+    + The process of trying to improve the read performance of a database at the expense of losing some write performance by adding redundant copies of data. 
+    + Logical Design Change:
+        + The Desinger is incharge of keeping data consistent
+        + Reads will be faster (select)
+        + Writes will be slower (insert, update, delete)
