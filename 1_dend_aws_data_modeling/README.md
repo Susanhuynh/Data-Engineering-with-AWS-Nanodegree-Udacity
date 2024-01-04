@@ -112,3 +112,31 @@
         + The Desinger is incharge of keeping data consistent
         + Reads will be faster (select)
         + Writes will be slower (insert, update, delete)
+
+- **Fact and Dimension Tables**
+    + Work together to create an organized data model. They help to solve business problems. One or more fact tables for each dimension tables. 
+    + **Fact tables**: consists of the measurement, metrics or facts of a business process.
+        + How many units of products were bought? (Fact_sales table)
+    + **Dimension tables**: A structure that categorizes facts and measures in order to enable users to answer business questions. Dimensions are  people, products, place and time.
+        + Where the product was bought? (Dim_store table)
+        + When the product was bought? (Dim_date table)
+        + What product was bought? (Dim_Product table)
+
+- **Star Schema**
+    + It is the simplest style of data mart schema. It consists of one of more fact tables referencing any number of dimension tables. 
+    + A fact is at its center.
+    + Dimension tables are around of a fact table. 
+    + Benefits:
+        + Denormalized
+        + Simplifies queries
+        + Fast Aggregation
+    + Drawbacks:
+        + Data integrity reduces
+        + Decrease query flexibility
+        + Many to many relationships is simplified
+
+- **Why "snowflake" schema?**
+    + It is a logical arreangement of tables in a nultidimensional database represented by centralized fact tables which are connected to multiple dimensions. 
+    + Star Schema is a special, simplified case of snowflake schema.
+    + Star schema does not allow for one to many relationships while snowflake schema does.
+    + Snowflake Schema is more normalized than star schema but only in 1NF or 2NF.
