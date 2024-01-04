@@ -140,3 +140,57 @@
     + Star Schema is a special, simplified case of snowflake schema.
     + Star schema does not allow for one to many relationships while snowflake schema does.
     + Snowflake Schema is more normalized than star schema but only in 1NF or 2NF.
+
+- **DATA Constraints**
+    + **NOT NULL**:
+        + It indicates that the column cannot contain a null value. 
+        ```
+        CREATE TABLE IF NOT EXISTS customer_transactions (
+        customer_id int NOT NULL, 
+        store_id int, 
+        spent numeric
+        );
+        ```
+        + You can add NOT NULL constraints to more than one column.
+        ```
+        CREATE TABLE IF NOT EXISTS customer_transactions (
+        customer_id int NOT NULL, 
+        store_id int NOT NULL, 
+        spent numeric
+        );
+        ```
+        + **UNIQUE**:
+            + The UNIQUE constraints is used to specify that the data across all the rows in one column are unique within the table. The UNIQUE constraint can also be used for multiple columns, so that the combination of the values across those columns will be unique within the table. 
+            ```
+            CREATE TABLE IF NOT EXISTS customer_transactions (
+            customer_id int NOT NULL UNIQUE, 
+            store_id int NOT NULL UNIQUE, 
+            spent numeric 
+            );
+            ```
+            + Another way to write a UNIQUE constraint is to add a table constraints using commas to separate the columns.
+            ```
+            CREATE TABLE IF NOT EXISTS customer_transactions (
+            customer_id int NOT NULL, 
+            store_id int NOT NULL, 
+            spent numeric,
+            UNIQUE (customer_id, store_id, spent)
+            );
+            ```
+        + **PRIMARY KEY**
+            + The Primary Key constraint is defined on a single column, and every table should contain a primary key. The values in this column uniquely identify the rows in the table. If a group of columns are defined as a primary key, they are called a **composite key**. That means the combination of values in these columns will uniquely identify the rows in the table. By default, the PRIMARY KEY constraint has the unique and not null constraint built into it.
+            ```
+            CREATE TABLE IF NOT EXISTS store (
+            store_id int PRIMARY KEY, 
+            store_location_city text,
+            store_location_state text
+            );
+            ```
+            ```
+            CREATE TABLE IF NOT EXISTS customer_transactions (
+            customer_id int, 
+            store_id int, 
+            spent numeric,
+            PRIMARY KEY (customer_id, store_id)
+            );
+            ```
