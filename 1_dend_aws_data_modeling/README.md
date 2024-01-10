@@ -194,3 +194,22 @@
             PRIMARY KEY (customer_id, store_id)
             );
             ```
+### NoSQL DATA MODELS
+- **Distributed database**: in order to have high availability, you will need copies of your data. 
+    + Eventual Consistency: used in distributed computing to achieve high availability that informally guarantees that, if no new updates are made to a given data item, eventully all accesses to that item will return the last updated value. It means that if no new changes are made, each copy of the data will be the same. But if there are new changes, the data may be different in different locations. The data may be inconsistent for only milliseconds. There are workarounds in place to prevent getting stale data. 
+- **CAP Theorem** 
+    + A distributed system can deliver only two of three desired characteristics: consistency, availability and partition tolerance. 
+        + Consistency: all clients see the same data at the same time, no matter which node they connect to. For example, whenever data is written to one node, it must be instantly forwarded or replicated to all the other nodes in the system before the write is deemed "successful".
+        + Availability: any client making a request for data gets a response, even if one or more nodes are down. Another way to state this - all working nodes in the distributed system return a valid response for any request, without exception.
+        + Partition tolerance: A partition is a communication break within a distributed system - a lost or temporarily delayed connection between two nodes. Partition tolerance means that the cluster must continue to work despite any number of communication breakdowns between nodes in the system.
+    + NoSQL databases are horizontally scalable and distributed by desing - they can reapidly scale across growing network consisting of multiple interconnected nodes. NoSQL databases are classified based on the two CAP characteristics they support:
+        + **CP Database**: A CP databse delivers consistency and partition tolerance at the expense of availability. When a partition occurs between two nodes, they system has to shut down the non-consistent node (make it unavailable) until the partition is resolved. 
+        + **AP database**: An AP database delivers availability and partition tolerance at the expense of consistency. When a partition occurs, all nodes remain available but those at the wrong end of a partition might return an older version of data than others. (When partition is resolved, the AP databases typically resync the nodes to repair all inconsistencies in the system).
+        - **CA database**: A CA databse delivers consistency and availability across all nodes. It can't do this if there is partition between any two nodes in the system, however, and therefore can deliver fault tolerance.
+- **Data Modeling in Apache Cassandra**: 
+    + Denormalization is not just okay - it is a must
+    + Denormalization must be done for fast reads
+    + Apache Cassandra has been optimized for fast writes
+    + Always think Queries first
+    + One table per Query is a great strategy
+    + Apache Cassandra does not allow for JOINs between tables
