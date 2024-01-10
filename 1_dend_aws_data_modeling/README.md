@@ -219,3 +219,6 @@
     + Data distributed by this partition key.
     + Simple or composite
     + May have one or more clustering columns.
+        + The clustering column will sort the data in sorted ascending order, e.g. alphabetical order.
+        + More than one clustering column can be added (or none)
+        + From there the clustering columns will sort in order of how they were added to the primary key. 
