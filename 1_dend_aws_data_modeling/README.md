@@ -213,3 +213,9 @@
     + Always think Queries first
     + One table per Query is a great strategy
     + Apache Cassandra does not allow for JOINs between tables
+- **PRIMARY KEY**: is how each row can be uniquely idenfified and how the data is distributed across the nodes (or servers) in our system. The first element of the PRIMARY KEY is the PARTITION KEY (which will determine the distribution). The PRIMARY KEY is made  up of either just a PARTITION KEY or with the addition of CLUSTERING COLUMNS.
+    + Must be unique.
+    + Hasing of this value results in placement on a particular node in the system.
+    + Data distributed by this partition key.
+    + Simple or composite
+    + May have one or more clustering columns.
