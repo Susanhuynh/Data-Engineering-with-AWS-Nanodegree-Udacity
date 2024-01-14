@@ -22,5 +22,40 @@
 - The dimensional model is designed to:
     - make it easy for business users to work with the data
     - improve analytical queries performance
-    ![Kimball's Bus Architecture](https://video.udacity-data.com/topher/2021/August/6112ddd2_l1-introduction-to-datawarehousing-3/l1-introduction-to-datawarehousing-3.png)
 
+![Kimball's Bus Architecture](https://video.udacity-data.com/topher/2021/August/6112ddd2_l1-introduction-to-datawarehousing-3/l1-introduction-to-datawarehousing-3.png)
+
+![The dimensional Model of a Data Warehouse](https://video.udacity-data.com/topher/2021/August/6111d21c_l1-introduction-to-datawarehousing-1/l1-introduction-to-datawarehousing-1.png)
+
+3. ETL Closer Look
+- Extracting:
+    - Transfer data to the warehouse
+- Transform:
+    - Integrates many sources together
+    - Possibly cleansing: inconsistencies, duplication, missing values...
+    - Possibly producing diagnostic metadata
+- Loading:
+    - Structuring and loading the data into the dimensional data model
+
+4. Dimensional Model
+- Goal of the Star Schema:
+    - Easy to understand
+    - Fast analytical query performance
+- Fact Tables
+    - Record busniess events: an order, a phone call, a book review
+    - Fact tables columns record events recorded in quantifiable metrics like quantity of an item, duration of a call, a book rating
+- Dimension Tables
+    - Record the context of the business events such as who, what, where, why...
+    - Dimension tables columns contain attributes like the store at which an item is purchased of the customer who made the call...
+
+![3RD Normal Form vs Star Schema](https://video.udacity-data.com/topher/2021/August/6111d490_l1-introduction-to-datawarehousing-2/l1-introduction-to-datawarehousing-2.png)
+
+****From 3RD Normal Form to ETL****
+- Extract:
+    - Query the 3NF DB
+- Transform:
+    - Join tables together
+    - Change types
+    - Add new columns
+- Load:
+    - Insert into facts and dimension tables
