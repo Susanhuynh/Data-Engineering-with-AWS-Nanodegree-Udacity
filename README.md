@@ -34,3 +34,24 @@ Relational data modeling with Postgres
 **5. How to create NoSQL data models**
 
 NoSQL data modeling with Apache Cassandra
+
+### Course 2: Data Warehouse, OLTP, OLAP, Dimensional Modeling, ELT and OLAP
+---
+
+**1. Business Perspective on Data Warehouse**
+    - OLTP: Onlline Transactional Processing
+    - OLAP: Online Analytical Processing
+**2. Technical Perspective on Data Warehouse**
+    - ETL Process
+**3. Dimensional Modeling**
+    - Star Scheme > 3NF
+    - ETL process from 3NF database to Star Schema
+**4. DWH Architeture**
+![Kimball's Bus Architecture](https://video.udacity-data.com/topher/2021/August/6112ddd2_l1-introduction-to-datawarehousing-3/l1-introduction-to-datawarehousing-3.png)
+
+![The dimensional Model of a Data Warehouse](https://video.udacity-data.com/topher/2021/August/6111d21c_l1-introduction-to-datawarehousing-1/l1-introduction-to-datawarehousing-1.png)
+
+**5. OLAP Cubes**
+- OLAP cube is an aggregation of data on a number of dimensions
+- Roll Up, Drill Down, Slice, Dicing
+- Group By cube() > Group by grouping sets() on performance (queries run faster)
