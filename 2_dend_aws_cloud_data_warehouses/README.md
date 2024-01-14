@@ -59,3 +59,10 @@
     - Add new columns
 - Load:
     - Insert into facts and dimension tables
+
+5. OLAP Cube Operations
+- An OLAP cube aggregates across various dimensions (such as: fact metric dimension, Month, Store). It provides a simplified and effective means of communication with business uesrs. 
+- Roll up: is grouping data by one-dimension. It aggregates or combines values and reduces number of rows or columns.
+- Drill-down: Decomposes values and increases number of rows or columns.
+- Slice: Reducing N dimensions to N-1 dimensions by restricting one dimension to a single value.
+- Dice: Same dimensions but computing a sub-sube by restricting, some of the values of the dimensions.
