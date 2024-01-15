@@ -59,3 +59,13 @@ NoSQL data modeling with Apache Cassandra
 - OLAP cube is an aggregation of data on a number of dimensions
 - Roll Up, Drill Down, Slice, Dicing
 - Group By cube() > Group by grouping sets() on performance (queries run faster)
+
+### Course 3: DWH on AWS
+---
+
+- Amazon Redshift Architecture
+- How to ETL with Redshift
+- How to ingest data into Redshift using S3 buckets
+- Parallel ETL
+- Optimizing Table Design using Distribution Styles
+

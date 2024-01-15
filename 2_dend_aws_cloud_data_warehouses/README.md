@@ -216,4 +216,16 @@ The advantages of Infrastructure as Code over creating Infrastructure by clickin
     - Data Aggregation
     - Data Versioning
     - Data security
-    
+
+**4. Optimizing Table Design with Distribution Styles**
+When table is partitioned up into many pieces and distributed across slices in different machines, this is done bindly. If you know about the frequent access pattern of a table, you can choose a more performant strategy by configuring different distribution options for your cluster.
+- Distribution Styles:
+    - EVEN: Round-robin over all slices to achieve load-balancing. Good if a table wont be joined.
+    - ALL: Smalles tables could be replicated on all slices to speed up joins. Used frequently for dimension tales. AKA 'broadcasting'
+    - AUTO: Leave decision to Redshift. 'Small enough' tables are distributed with an ALL strategy.
+    - KEY: Rows having similar values are placed in same slice
+- Sorting key
+    - Define columns as sort key
+    - Rows are sorted before distribution to slices
+    - Minimizes the query time
+    - Useful for columns taht are used frequently in sorting like the date dimension and its corersponding foreign key in the fact table
