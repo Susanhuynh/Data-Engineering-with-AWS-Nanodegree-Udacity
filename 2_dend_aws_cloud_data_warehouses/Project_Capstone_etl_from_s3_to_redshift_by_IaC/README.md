@@ -6,6 +6,8 @@ In this project, I build an ETL pipeline for a database hosted on Redshift. I wi
     - extract data from S3 to staging tables on Redshift
     - transform data by executing SQL statements that create the analytics tables from these staging tables by start schema.
     - load star shema tables to Redshift
+
+![Data Pipeline](!data_pipeline.png)
     
 ### 2. Tech Stack and Knowledge
 
@@ -32,8 +34,8 @@ A music streaming startup, Sparkify, has grown their user base and song database
 #### 3.2 Raw data
 The raw data consists of two datasets stored in S3: song_data and log_data. Here are the S3 links for each:
 
-Song data: s3://udacity-dend/song_data
-Log data: s3://udacity-dend/log_data
+- Song data: **s3://udacity-dend/song_data**
+- Log data: **s3://udacity-dend/log_data**
 
 #### 3.3 Data Warehouse Design
 
@@ -232,8 +234,9 @@ staging_songs_copy = ("""
     group by ds.title
     ORDER BY number_of_plays DESC
     limit 10;
-     ```
-    ![Top 10 Songs](top10songs.png)
+    ```
+![Top 10 Songs](top10songs.png)
+
 #### 2. The most traffic hour
     ```
     select
@@ -245,7 +248,7 @@ staging_songs_copy = ("""
     ORDER BY number_of_plays DESC
     limit 10;
     ```
-    ![The most trafic hour](hour.png)
+![The most trafic hour](hour.png)
 #### 3. The most traffic weekday and hour
     ```
     select 
@@ -257,6 +260,5 @@ staging_songs_copy = ("""
     group by dt.weekday, dt.hour
     order by num_of_plays desc
     limit 10;
-
     ```
-    ![The most trafic weekday](weekday.png)
+![The most trafic weekday](weekday.png)
