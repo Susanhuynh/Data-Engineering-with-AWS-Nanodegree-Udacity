@@ -7,7 +7,7 @@ In this project, I build an ETL pipeline for a database hosted on Redshift. I wi
     - transform data by executing SQL statements that create the analytics tables from these staging tables by start schema.
     - load star shema tables to Redshift
 
-![Data Pipeline](!data_pipeline.png)
+![Data Pipeline](data_pipeline.png)
     
 ### 2. Tech Stack and Knowledge
 
