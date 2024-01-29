@@ -1,4 +1,6 @@
 ### LESSON 1: INTRODUCTION TO DATAWAREHOUSE
+---
+
 **1. What is Data Warehouse? A business Perspective**
 - Data Warehouse is a system (including process, technologies and data representations) the enables us to support analytical process.
 
