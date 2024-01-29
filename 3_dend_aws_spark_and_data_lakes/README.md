@@ -23,11 +23,28 @@
 - There are four different modes to setup Spark:
     - Local mode: everything happens on a single machine. This mode is useful when learning the syntax and to prototype your project. 
     - The other three modes are distributed and declare a cluster manager. The cluster manager is a separate process that monitors available resources and make sure that all machines are responsive during the job.
+
     ![Spark Mode](https://video.udacity-data.com/topher/2021/September/613f8cba_screen-shot-2021-09-13-at-12.38.48-pm/screen-shot-2021-09-13-at-12.38.48-pm.png)
+
 - You do not always need Spark:
     - If you working on smaller data sets
 
 4. Data Lakes
 - A data lake pours all of the data into a single repository, ready to be consumed by whoever and wherever they need.
 - Key features of data lakes:
-    - 
+    - Lower costs associated with using big data tool for ETL/ELT operations
+    - Data lakes provide schema-on-read rather than shcema-on-write which lowers the cost and work of ingesting large amounts of data
+    - Data lakes provide support for structured, semi-structured and unstructured data.
+- However, because of the need to ingest a large amount of unstructured data, we lost:
+    - Atomic transaction
+    - Quality enforcement
+    - Consistency in data structure
+
+5. Lakehouse Architecture
+- The key innovation is that the creation of a metadata and data governance layer on top of the data lake.
+    - Creating a pool of raw data as well as a curated set of data
+    - Providing a flexibility and benefits of data lakes as well as providing a solution to the weakness in data lakes.
+- Lakehouse Architecture features:
+    - Bronze: Raw ingested data
+    - Silver: Filtered, cleaned and augmented data
+    - Medal: Business-level aggregates which is ready for analytics and reporting needs.
